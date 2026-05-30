@@ -18,13 +18,46 @@ api_key = config['Gemini']['API_KEY']
 genai.configure(api_key=api_key)
 
 model = genai.GenerativeModel('gemini-2.5-flash')
+
+@app.route('/auth')
+def auth_page():
+    return render_template('auth.html')
+
+@app.route('/rpg')
+def rpg_page():
+    return render_template('rpg.html')
+
 @app.route('/')
 def home():
     return render_template('index.html')
 
+@app.route('/jiao')
+def jiao_page():
+    return render_template('jiao.html')
+
 @app.route('/tarot')
 def tarot_page():
     return render_template('tarot.html')
+
+@app.route('/fortune')
+def fortune_page():
+    return render_template('fortune.html')
+
+@app.route('/ai')
+def ai_page():
+    return render_template('ai.html')
+
+@app.route('/dream')
+def dream_page():
+    return render_template('dream.html')
+
+@app.route('/answerbook')
+def answerbook_page():
+    return render_template('answerbook.html')
+
+@app.route('/lenormand')
+def lenormand_page():
+    return render_template('lenormand.html')
 
 @app.route('/guidance')
 def guidance_page():
